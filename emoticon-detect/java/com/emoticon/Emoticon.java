@@ -56,4 +56,25 @@ public class Emoticon implements Serializable {
                 ", end=" + end +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Emoticon emoticon = (Emoticon) o;
+
+        if (start != emoticon.start) return false;
+        if (end != emoticon.end) return false;
+        return value.equals(emoticon.value);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = value.hashCode();
+        result = 31 * result + start;
+        result = 31 * result + end;
+        return result;
+    }
 }

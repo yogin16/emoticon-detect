@@ -15,13 +15,10 @@ public class EmoticonDetectorTest {
     public static void main(String[] args) {
         EmoticonDetector detector = new EmoticonDetector(getEmojisToDetect());
         Set<Emoticon> detected = detector.detect("Hello World!");
-        System.out.println(detected);
+        assert detected.isEmpty();
 
         detected = detector.detect("Hello World :)");
-        System.out.println(detected);
-
-        detected = detector.detect("Hello World :) :D");
-        System.out.println(detected);
+        assert detected.contains(new Emoticon(":)", 12, 13));
     }
 
     private static Set<String> getEmojisToDetect() {
