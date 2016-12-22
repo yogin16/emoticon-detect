@@ -1,5 +1,6 @@
 package com.emoticon;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -8,7 +9,9 @@ import java.util.*;
  *
  * @author yogin
  */
-public class EmoticonDetector {
+public class EmoticonDetector implements Serializable {
+    private static final long serialVersionUID = 42L;
+
     private static final Character DUMMY_CHAR = '\u2063';
     private static final String LABEL_FOR_DUMMY_STATE = "DummyState";
 
@@ -141,7 +144,9 @@ public class EmoticonDetector {
         return LABEL_FOR_DUMMY_STATE;
     }
 
-    private static class State {
+    private static class State implements Serializable {
+        private static final long serialVersionUID = 42L;
+
         private String label;
         private Map<Character, String> transitionMap;
         private String emoticon;
