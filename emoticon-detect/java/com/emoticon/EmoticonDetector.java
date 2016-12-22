@@ -60,6 +60,8 @@ public class EmoticonDetector implements Serializable {
         return emoticons;
     }
 
+    /******************* Private Methods ******************/
+
     private void init() {
         characters = identifyCharacters();
         Set<String> stateLabels = identifyStates();
