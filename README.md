@@ -10,3 +10,5 @@ EmoticonDetector detector = new EmoticonDetector(emojisToDetect);
 
 Set<Emoticon> result = detector.detect("Hello World :D");
 ```
+# TODO
+Add default EmoticonDetectorFactory for list of all commonly used emoticons.
