@@ -11,4 +11,5 @@ EmoticonDetector detector = new EmoticonDetector(emojisToDetect);
 Set<Emoticon> result = detector.detect("Hello World :D");
 ```
 # todo
-Add default EmoticonDetectorFactory for list of all commonly used emoticons.
+Add default EmoticonDetectorFactory for Pre-constructed EmoticonDetector with list of all commonly used emoticons.
+Make this generic as KeywordDetector and extend Emoticon to have any specific handling if needed.
