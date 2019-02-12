@@ -5,10 +5,23 @@ It would iterate over the complete string only once to figure out all the emojis
 
 # usage
 ```java
-Set<String> emojisToDetect = new HashSet<>(); //All the emoticons you want to detect 
-EmoticonDetector detector = new EmoticonDetector(emojisToDetect);
+  public static void main(String[] args) {
+        EmoticonDetector detector = new EmoticonDetector(getEmojisToDetect());
+        Set<Emoticon> detected = detector.detect("Hello World!");
+        assert detected.isEmpty();
 
-Set<Emoticon> result = detector.detect("Hello World :D");
+        detected = detector.detect("Hello World :)");
+        assert detected.contains(new Emoticon(":)", 12, 13));
+    }
+
+    private static Set<String> getEmojisToDetect() {
+        Set<String> emoticons = new HashSet<>();
+        emoticons.add(":)");
+        emoticons.add(":(");
+        emoticons.add(":D");
+        emoticons.add(":P");
+        return emoticons;
+    }
 ```
 # todo
 Add default EmoticonDetectorFactory for Pre-constructed EmoticonDetector with list of all commonly used emoticons.
